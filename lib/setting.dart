@@ -116,8 +116,10 @@ class DeviceSelectionPage extends StatelessWidget {
                         child: ListView(children: [
                           _buildSelectionItem(
                               'assets/motor.jpg', 'Motor', '149.00'),
-
-                        ]))),
+                        ]
+                        )
+                    )
+                ),
               ],
             ),
           )

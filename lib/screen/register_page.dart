@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:iotappagriculture/colors.dart';
+import 'package:iotappagriculture/widget/toast.dart';
 import '../model/user_register_model.dart';
 
 import 'login_screen.dart';
@@ -42,6 +43,10 @@ class _SignupPageState extends State<SignupPage> {
   bool isLoading = false;
   Future<UserRegister> userRegistration(String username, String usermobno,
       String deviceid, String password) async {
+    setState(() {
+      isLoading = true;
+      registrmsg = 'Please wait...';
+    });
     final String apiUrl =
         "https://agriautomation.000webhostapp.com/register.php";
 
@@ -81,9 +86,10 @@ class _SignupPageState extends State<SignupPage> {
       );
     } else {
       print(data['error_msg']);
-      setState(() {
-        registrmsg = 'Register failed...';
-      });
+      showToast("Register failed...");
+ //   setState(() {
+ //     registrmsg = 'Register failed...';
+ //   });
     }
 
     if (response.statusCode == 200) {
@@ -245,30 +251,25 @@ class _SignupPageState extends State<SignupPage> {
                           },
                         ),
                         SizedBox(height: 35.0),
-                        Container(
-                            height: 40.0,
-                            child: Material(
-                              borderRadius: BorderRadius.circular(20.0),
-                              shadowColor: primaryLight,
-                              color: primaryColor,
-                              elevation: 7.0,
-                              child: GestureDetector(
-                                onTap: () {
-                                  if(_registrformkey.currentState.validate()){
-                                    userRegistration(
-                                        usernameController.text,
-                                        usermobnoController.text,
-                                        deviceidController.text,
-                                        passwordController.text);
-
-                                    setState(() {
-                                      isLoading = true;
-                                      registrmsg = 'Please wait...';
-                                    });
-                                  }
-
-                                },
-                                child: isLoading ? CircularProgressIndicator(backgroundColor: Colors.white,) : Center(
+                        isLoading ? CircularProgressIndicator(backgroundColor: primaryColor,)
+                            : GestureDetector(
+                              onTap: () {
+                                if(_registrformkey.currentState.validate()){
+                                  userRegistration(
+                                      usernameController.text,
+                                      usermobnoController.text,
+                                      deviceidController.text,
+                                      passwordController.text);
+                                }
+                              },
+                              child: Container(
+                              height: 40.0,
+                              child: Material(
+                                borderRadius: BorderRadius.circular(20.0),
+                                shadowColor: primaryLight,
+                                color: primaryColor,
+                                elevation: 7.0,
+                                child: Center(
                                   child: Text(
                                     'Register',
                                     style: TextStyle(
@@ -279,8 +280,8 @@ class _SignupPageState extends State<SignupPage> {
                                     ),
                                   ),
                                 ),
-                              ),
-                            )),
+                              )),
+                            ),
                         SizedBox(height: 20.0),
                         Text(registrmsg),
                         Container(

@@ -175,34 +175,34 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                         SizedBox(height: 40.0),
-                        Container(
-                          height: 40.0,
-                          child: Material(
-                            borderRadius: BorderRadius.circular(20.0),
-                            shadowColor: primaryLight,
-                            color: primaryColor,
-                            elevation: 7.0,
-                            child: GestureDetector(
-                              onTap: () async {
-                                if(_formkey.currentState.validate()) {
-                                  userLoginprocess(deviceiddController.text,
-                                      passworddController.text);
+                        isLoading ? CircularProgressIndicator(backgroundColor: primaryColor,)
+                            : GestureDetector(
+                          onTap: () async {
+                            if(_formkey.currentState.validate()) {
+                              userLoginprocess(deviceiddController.text,
+                                  passworddController.text);
 
-                                  setState(() {
-                                    isLoading = true;
-                                    message = 'Please wait...';
-                                  });
-                                }
+                              setState(() {
+                                isLoading = true;
+                                message = 'Please wait...';
+                              });
+                            }
 
-
-                                // Navigator.push(
-                                //   context,
-                                //   MaterialPageRoute(
-                                //       builder: (context) => DashboardPage()),
-                                // );
-                                //print(data);
-                              },
-                              child: isLoading ? CircularProgressIndicator(backgroundColor: Colors.white,) : Center(
+                            // Navigator.push(
+                            //   context,
+                            //   MaterialPageRoute(
+                            //       builder: (context) => DashboardPage()),
+                            // );
+                            //print(data);
+                          },
+                          child: Container(
+                            height: 40.0,
+                            child:  Material(
+                              borderRadius: BorderRadius.circular(20.0),
+                              shadowColor: primaryLight,
+                              color: primaryColor,
+                              elevation: 7.0,
+                              child:  Center(
                                 child: Text(
                                   'LOGIN',
                                   style: TextStyle(
