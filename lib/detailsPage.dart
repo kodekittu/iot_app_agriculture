@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'colors.dart';
+
 class DetailsPage extends StatefulWidget {
   final heroTag;
   final foodName;
@@ -17,7 +19,7 @@ class _DetailsPageState extends State<DetailsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xFF7A9BEE),
+        backgroundColor: backgroundColor,
         appBar: AppBar(
           leading: IconButton(
             onPressed: () {
@@ -98,7 +100,8 @@ class _DetailsPageState extends State<DetailsPage> {
                           height: 40.0,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(17.0),
-                              color: Color(0xFF7A9BEE)),
+                              color: primaryColor
+                          ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
@@ -109,7 +112,8 @@ class _DetailsPageState extends State<DetailsPage> {
                                   width: 25.0,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(7.0),
-                                      color: Color(0xFF7A9BEE)),
+                                      color: primaryColor
+                                  ),
                                   child: Center(
                                     child: Icon(
                                       Icons.remove,
@@ -135,7 +139,7 @@ class _DetailsPageState extends State<DetailsPage> {
                                   child: Center(
                                     child: Icon(
                                       Icons.add,
-                                      color: Color(0xFF7A9BEE),
+                                      color: primaryColor,
                                       size: 20.0,
                                     ),
                                   ),
@@ -200,7 +204,7 @@ class _DetailsPageState extends State<DetailsPage> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10.0),
               color:
-                  cardTitle == selectedCard ? Color(0xFF7A9BEE) : Colors.white,
+                  cardTitle == selectedCard ? primaryColor : Colors.white,
               border: Border.all(
                   color: cardTitle == selectedCard
                       ? Colors.transparent
@@ -263,7 +267,7 @@ class _DetailsPageState extends State<DetailsPage> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10.0),
               color:
-              cardTitle == selectedCard ? Color(0xFF7A9BEE) : Colors.white,
+              cardTitle == selectedCard ? primaryColor : Colors.white,
               border: Border.all(
                   color: cardTitle == selectedCard
                       ? Colors.transparent

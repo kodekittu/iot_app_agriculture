@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iotappagriculture/colors.dart';
 import 'detailsPage.dart';
 
 class DeviceSelectionPage extends StatelessWidget {
@@ -42,7 +43,7 @@ class DeviceSelectionPage extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor: Color(0xFF7A9BEE),
+      backgroundColor: backgroundColor,
       body: ListView(
         children: <Widget>[
           Padding(

@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 const primaryLight = Colors.blueAccent;
-const primaryColor =  Colors.blue;
+const primaryColor =  const Color(0xFF7A9BEE);
 const secondaryColor = Colors.grey;
 const backgroundColor = const Color(0xFF7A9BEE);
 

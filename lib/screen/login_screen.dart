@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
+import 'package:iotappagriculture/colors.dart';
 import 'package:iotappagriculture/model/user_login_model.dart';
 
 import '../DashboardPage.dart';
@@ -103,7 +104,8 @@ class _LoginPageState extends State<LoginPage> {
                         style: TextStyle(
                             fontSize: 30.0,
                             fontWeight: FontWeight.bold,
-                            color: Colors.blue)),
+                            color: primaryColor
+                        )),
                   ),
                   Container(
                     padding: EdgeInsets.fromLTRB(295.0, 103.0, 0.0, 0.0),
@@ -111,7 +113,7 @@ class _LoginPageState extends State<LoginPage> {
                         style: TextStyle(
                             fontSize: 80.0,
                             fontWeight: FontWeight.bold,
-                            color: Colors.blue)),
+                            color: primaryColor)),
                   )
                 ],
               ),
@@ -164,7 +166,7 @@ class _LoginPageState extends State<LoginPage> {
                             child: Text(
                               'Forgot Password',
                               style: TextStyle(
-                                color: Colors.blue,
+                                color: primaryColor,
                                 fontWeight: FontWeight.bold,
                                 //fontFamily: 'Montserrat',
                                 //decoration: TextDecoration.underline
@@ -177,8 +179,8 @@ class _LoginPageState extends State<LoginPage> {
                           height: 40.0,
                           child: Material(
                             borderRadius: BorderRadius.circular(20.0),
-                            shadowColor: Colors.blueAccent,
-                            color: Colors.blue,
+                            shadowColor: primaryLight,
+                            color: primaryColor,
                             elevation: 7.0,
                             child: GestureDetector(
                               onTap: () async {
@@ -265,7 +267,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: Text(
                     'Register',
                     style: TextStyle(
-                      color: Colors.blue,
+                      color: primaryColor,
                       //fontFamily: 'Montserrat',
                       fontSize: 16.0,
                       fontWeight: FontWeight.bold,

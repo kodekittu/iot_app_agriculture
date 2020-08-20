@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:iotappagriculture/colors.dart';
 import '../model/user_register_model.dart';
 
 import 'login_screen.dart';
@@ -151,7 +152,9 @@ class _SignupPageState extends State<SignupPage> {
                           style: TextStyle(
                               fontSize: 30.0,
                               fontWeight: FontWeight.bold,
-                              color: Colors.blue)),
+                              color: primaryColor
+                          )
+                      ),
                     ),
                     Container(
                       padding: EdgeInsets.fromLTRB(260.0, 55.0, 0.0, 0.0),
@@ -160,7 +163,8 @@ class _SignupPageState extends State<SignupPage> {
                         style: TextStyle(
                             fontSize: 80.0,
                             fontWeight: FontWeight.bold,
-                            color: Colors.blue),
+                            color: primaryColor
+                        ),
                       ),
                     )
                   ],
@@ -245,8 +249,8 @@ class _SignupPageState extends State<SignupPage> {
                             height: 40.0,
                             child: Material(
                               borderRadius: BorderRadius.circular(20.0),
-                              shadowColor: Colors.blueAccent,
-                              color: Colors.blue,
+                              shadowColor: primaryLight,
+                              color: primaryColor,
                               elevation: 7.0,
                               child: GestureDetector(
                                 onTap: () {

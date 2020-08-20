@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iotappagriculture/colors.dart';
 import 'package:iotappagriculture/screen/portfolio_screen.dart';
 import 'package:iotappagriculture/screen/schedule_screen.dart';
 import 'package:iotappagriculture/screen/setting_screen.dart';
@@ -30,23 +31,28 @@ class _DashboardPageState extends State<DashboardPage> {
           BottomNavigationBarItem(
               icon: Icon(Icons.bookmark_border),
               title: Text('Watchlist'),
-              backgroundColor: Colors.blue),
+              backgroundColor: backgroundColor
+          ),
           BottomNavigationBarItem(
               icon: Icon(Icons.device_hub),
               title: Text('Status'),
-              backgroundColor: Colors.blue),
+              backgroundColor: backgroundColor
+          ),
           BottomNavigationBarItem(
               icon: Icon(Icons.schedule),
               title: Text('Schedule'),
-              backgroundColor: Colors.blue),
+              backgroundColor: backgroundColor
+          ),
           BottomNavigationBarItem(
               icon: Icon(Icons.add_comment),
               title: Text('Portfolio'),
-              backgroundColor: Colors.blue),
+              backgroundColor: backgroundColor
+          ),
           BottomNavigationBarItem(
               icon: Icon(Icons.person),
               title: Text('Settings'),
-              backgroundColor: Colors.blue),
+              backgroundColor: backgroundColor
+          ),
         ],
         onTap: (index) {
           setState(() {
