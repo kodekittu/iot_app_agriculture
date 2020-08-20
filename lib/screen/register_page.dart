@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'model//user_register_model.dart';
+import '../model/user_register_model.dart';
 
-import 'main.dart';
+import 'login_screen.dart';
 
 // class User {
 //   String error;
@@ -76,7 +76,7 @@ class _SignupPageState extends State<SignupPage> {
       });
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => MyHomePage()),
+        MaterialPageRoute(builder: (context) => LoginPage()),
       );
     } else {
       print(data['error_msg']);
